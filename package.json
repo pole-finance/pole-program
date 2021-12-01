@@ -7,7 +7,7 @@
         "test:e2e": "anchor build && ANCHOR_WALLET=~/.config/solana/id.json anchor test --skip-build 'tests/*.ts'",
         "test:e2e_use_local": "anchor build && ANCHOR_WALLET=~/.config/solana/id.json anchor test --skip-build --skip-local-validator 'tests/*.ts'",
         "lint": "eslint tests --cache && eslint app/src --cache",
-        "lint:ci": "eslint tests --max-warnings=0 && eslint app/src --max-warnings=0"
+        "lint:ci": "eslint tests --max-warnings=0"
     },
     "dependencies": {
         "@port.finance/port-sdk": "^0.1.41",
