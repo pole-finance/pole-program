@@ -1,0 +1,6 @@
+[submodule "deps/swap"]
+	path = deps/swap
+	url = https://github.com/denghz/swap.git
+[submodule "deps/port-lending"]
+	path = deps/port-lending
+	url = https://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@github.com/port-finance/lending.git

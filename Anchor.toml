@@ -1,0 +1,39 @@
+
+[programs.localnet]
+pole = "PoLEr5uRhLSpEZgmBaSmzTUVbEANuFp4vBARZbKsqnu"
+
+[workspace]
+members = [
+    "programs/pole",
+    "programs/test-writer",
+]
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[programs.mainnet]
+pole = { address = "PoLEr5uRhLSpEZgmBaSmzTUVbEANuFp4vBARZbKsqnu", path = "./target/deploy/pole.so", idl = "./target/idl/pole.json" }
+serum_dex = { address = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin", path = "./deps/serum_dex.so" }
+serum_swap = { address = "22Y43yTVxuUkoRKdm9thyRhQ3SdgQS7c7kB6UNCiaczD", path = "./deps/serum_swap.so"}
+port-lending = { address = "Port7uDYB3wk6GJAw4KT1WpTeMtSu9bTcChBHkX2LfR", path = "./deps/port_finance_variable_rate_lending.so"}
+port-staking = { address = "stkarvwmSzv2BygN5e2LeTwimTczLWHCKPKGC2zVLiq", path = "./deps/port_finance_staking.so"}
+
+[[test.genesis]]
+address = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+program = "./deps/serum_dex.so"
+
+[[test.genesis]]
+address = "22Y43yTVxuUkoRKdm9thyRhQ3SdgQS7c7kB6UNCiaczD"
+program = "./deps/serum_swap.so"
+
+[[test.genesis]]
+address = "Port7uDYB3wk6GJAw4KT1WpTeMtSu9bTcChBHkX2LfR"
+program = "./deps/port_finance_variable_rate_lending.so"
+
+[[test.genesis]]
+address = "stkarvwmSzv2BygN5e2LeTwimTczLWHCKPKGC2zVLiq"
+program = "./deps/port_finance_staking.so"
+
+[scripts]
+test = "yarn ts-mocha -t 30000"

@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "programs/*"
+]
+
+exclude = [
+    "deps/swap",
+    "deps/port-lending",
+]
